@@ -1,0 +1,16 @@
+{
+  "name": "caesarchi-profile",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Caesar Chi — editorial profile page, deployed to Cloudflare Pages.",
+  "scripts": {
+    "dev": "wrangler pages dev public --port 8788",
+    "build": "echo 'Static site — nothing to build. Output dir: public/'",
+    "pages:build": "npm run build",
+    "pages:preview": "wrangler pages dev public",
+    "pages:deploy": "wrangler pages deploy public --project-name=caesarchi-profile --branch=main --commit-dirty=true"
+  },
+  "devDependencies": {
+    "wrangler": "^4.84.1"
+  }
+}
