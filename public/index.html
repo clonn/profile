@@ -1012,6 +1012,290 @@
     .portrait-frame{aspect-ratio: 3/4}
   }
 
+  /* ——— Press / Appearances ——— */
+  .press-section{ padding-top:40px }
+  .press-list{
+    list-style:none;
+    max-width:1200px;
+    margin:0 auto;
+    padding:0;
+    border-top:1px solid var(--ink);
+  }
+  .press-row{
+    display:grid;
+    grid-template-columns: 170px minmax(0,1fr) 110px;
+    gap:40px;
+    padding:36px 8px 40px;
+    border-bottom:1px solid var(--rule);
+    align-items:start;
+    position:relative;
+    transition: background .3s;
+  }
+  .press-row:hover{
+    background:linear-gradient(to right, var(--paper), transparent 70%);
+  }
+  .press-meta{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    padding-top:6px;
+  }
+  .press-meta .press-num{
+    color:var(--accent);
+    font-weight:500;
+  }
+  .press-meta .press-kind{
+    display:inline-block;
+    border:1px solid var(--ink);
+    padding:4px 10px;
+    width:fit-content;
+    color:var(--ink);
+    letter-spacing:.2em;
+  }
+  .press-body{ max-width:680px }
+  .press-title{
+    font-family:'Playfair Display',serif;
+    font-weight:500;
+    font-style:italic;
+    font-size: clamp(20px, 2vw, 26px);
+    line-height:1.28;
+    letter-spacing:-.01em;
+    color:var(--ink);
+    margin-bottom:12px;
+  }
+  body.zh .press-title{
+    font-family:'Noto Serif TC',serif;
+    font-style:normal;
+    font-weight:600;
+    line-height:1.5;
+  }
+  .press-desc{
+    font-size:15px;
+    line-height:1.6;
+    color:var(--ink-2);
+    margin-bottom:16px;
+  }
+  body.zh .press-desc{ font-size:14.5px; line-height:1.9 }
+  .press-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px 22px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+  }
+  .press-links a{
+    color:var(--ink);
+    border-bottom:1px solid var(--rule);
+    padding-bottom:2px;
+    transition:color .2s, border-color .2s;
+  }
+  .press-links a:hover{
+    color:var(--accent);
+    border-color:var(--accent);
+  }
+  .press-date{
+    font-family:'Playfair Display',serif;
+    font-weight:500;
+    font-size:30px;
+    color:var(--accent);
+    letter-spacing:-.02em;
+    text-align:right;
+    line-height:1;
+    padding-top:4px;
+  }
+  body.zh .press-date{
+    font-family:'Noto Serif TC',serif;
+    font-weight:600;
+  }
+
+  @media (max-width: 960px){
+    .press-row{
+      grid-template-columns: 1fr;
+      gap:14px;
+      padding:28px 4px 32px;
+    }
+    .press-meta{
+      flex-direction:row;
+      align-items:center;
+      gap:14px;
+      padding-top:0;
+    }
+    .press-date{
+      text-align:left;
+      font-size:22px;
+    }
+  }
+
+  /* ——— Modules / npm ——— */
+  .module-hero{
+    display:grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap:60px;
+    align-items:end;
+    border-top:1px solid var(--ink);
+    padding:48px 0 56px;
+    margin-bottom:0;
+  }
+  .module-headline .kicker{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    letter-spacing:.18em;
+    color:var(--accent);
+    margin-bottom:18px;
+  }
+  .module-headline .module-name{
+    display:inline-block;
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    font-weight:500;
+    font-size: clamp(54px, 7vw, 96px);
+    line-height:.95;
+    letter-spacing:-.025em;
+    color:var(--ink);
+    border-bottom:2px solid var(--accent);
+    padding-bottom:6px;
+    margin-bottom:24px;
+    transition: color .2s;
+  }
+  .module-headline .module-name:hover{ color:var(--accent) }
+  .module-headline .module-tag{
+    font-family:'Source Serif 4', Georgia, serif;
+    font-size:18px;
+    line-height:1.55;
+    color:var(--ink-2);
+    max-width:46ch;
+  }
+  body.zh .module-headline .module-tag{
+    font-family:'Noto Serif TC', serif;
+    font-size:16.5px;
+    line-height:1.85;
+  }
+  .module-stats{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    border-left:1px solid var(--rule);
+  }
+  .module-stats .stat{
+    padding:10px 28px;
+    border-right:1px solid var(--rule);
+  }
+  .module-stats .stat:last-child{ border-right:none }
+  .module-stats .num{
+    font-family:'Playfair Display',serif;
+    font-weight:500;
+    font-size: clamp(54px, 6.4vw, 84px);
+    line-height:1;
+    letter-spacing:-.025em;
+    color:var(--accent);
+    margin-bottom:12px;
+  }
+  .module-stats .num .unit{
+    font-family:'Source Serif 4',serif;
+    font-size:18px;
+    font-style:italic;
+    color:var(--ink-soft);
+    margin-left:4px;
+    letter-spacing:0;
+    font-weight:400;
+  }
+  .module-stats .label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+
+  .module-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    border-top:1px solid var(--ink);
+    border-left:1px solid var(--rule);
+  }
+  .module-grid .cell{
+    padding:32px 28px 38px;
+    border-right:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    transition: background .3s;
+  }
+  .module-grid .cell:hover{ background:var(--paper) }
+  .module-grid .cell .pkg-meta{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:14px;
+  }
+  .module-grid .cell .pkg-meta .since{ color:var(--accent) }
+  .module-grid .cell .pkg-name{
+    display:inline-block;
+    font-family:'JetBrains Mono',monospace;
+    font-size:18px;
+    font-weight:500;
+    color:var(--ink);
+    margin-bottom:10px;
+    border-bottom:1px solid var(--rule);
+    padding-bottom:2px;
+    word-break:break-all;
+    transition: color .2s, border-color .2s;
+  }
+  .module-grid .cell .pkg-name:hover{
+    color:var(--accent);
+    border-color:var(--accent);
+  }
+  .module-grid .cell .pkg-desc{
+    font-size:14.5px;
+    line-height:1.6;
+    color:var(--ink-2);
+  }
+  body.zh .module-grid .cell .pkg-desc{ font-size:14px; line-height:1.85 }
+
+  /* Archive / external link strip */
+  .archive-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px 28px;
+    padding:32px 0 0;
+    border-top:1px solid var(--rule);
+    margin-top:48px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+  }
+  .archive-links a{
+    color:var(--ink);
+    border-bottom:1px solid var(--rule);
+    padding-bottom:3px;
+    transition:color .2s, border-color .2s;
+  }
+  .archive-links a:hover{
+    color:var(--accent);
+    border-color:var(--accent);
+  }
+
+  @media (max-width: 960px){
+    .module-hero{ grid-template-columns:1fr; gap:32px; padding:32px 0 40px }
+    .module-stats{ border-left:none; border-top:1px solid var(--rule); padding-top:24px }
+    .module-grid{ grid-template-columns:1fr 1fr }
+  }
+  @media (max-width: 560px){
+    .module-grid{ grid-template-columns:1fr }
+    .module-stats{ grid-template-columns:1fr }
+    .module-stats .stat{ border-right:none; border-bottom:1px solid var(--rule); padding:18px 0 }
+  }
+
 </style>
 </head>
 <body class="en">
@@ -1029,6 +1313,9 @@
       <a href="#profile" data-en="Profile" data-zh="介紹"></a>
       <a href="#focus" data-en="Focus" data-zh="現況"></a>
       <a href="#ledger" data-en="Ledger" data-zh="紀錄"></a>
+      <a href="#press" data-en="Press" data-zh="專訪"></a>
+      <a href="#slides" data-en="Decks" data-zh="簡報"></a>
+      <a href="#modules" data-en="Modules" data-zh="模組"></a>
       <a href="#contact" data-en="Contact" data-zh="聯絡"></a>
     </nav>
     <button class="lang-toggle" id="langToggle" aria-label="Language">
@@ -1150,7 +1437,8 @@
         <!-- Seal -->
         <div class="seal large round" style="top:28px;right:28px">智</div>
 
-        <img src="assets/portrait.png" alt="Caesar Chi portrait" />
+        <img class="en-only" src="assets/portrait-en.png" alt="Caesar Chi — portrait (EN)" />
+        <img class="zh-only" src="assets/portrait-zh.png" alt="戚務漢 — 繡像（中文版）" style="display:none" />
 
         <!-- Bottom-right small seals -->
         <div class="seal sq" style="bottom:32px;right:32px; font-size:18px; width:52px; height:52px; line-height:1.1; padding:6px; text-align:center; transform:rotate(3deg)">
@@ -1320,12 +1608,379 @@
     </div>
   </section>
 
+  <!-- PRESS / APPEARANCES -->
+  <section class="editorial press-section" id="press">
+    <div class="section-head reveal">
+      <span class="section-num">
+        <b>§ IV</b> &nbsp;·&nbsp; <span data-en="In the Press" data-zh="專訪與發表"></span>
+      </span>
+      <h2 class="section-title">
+        <span data-en-html="A few places the <span class='italic'>work has travelled.</span>"
+              data-zh-html="工作所至之處，<span class='italic'>片段紀錄。</span>"></span>
+      </h2>
+    </div>
+
+    <ol class="press-list reveal-stagger">
+      <li class="press-row">
+        <div class="press-meta">
+          <span class="press-num">§ 01</span>
+          <span class="press-kind" data-en="Podcast" data-zh="專訪"></span>
+        </div>
+        <div class="press-body">
+          <h3 class="press-title"
+              data-en="Digital Keywords EP231 — &ldquo;Not just a chatbot: OpenClaw gives AI hands and feet, reshaping enterprise automation&rdquo;"
+              data-zh="數位關鍵字 EP231：不只是聊天機器人！OpenClaw 讓 AI 長出手腳，改變企業自動化的方式"></h3>
+          <p class="press-desc"
+             data-en="Business Next (數位時代) podcast — featured guest, on AI agents and how they change enterprise automation."
+             data-zh="數位時代 Business Next Podcast 專訪 — 談 AI agent 如何改變企業自動化的方式。"></p>
+          <div class="press-links">
+            <a href="https://podcasts.apple.com/us/podcast/%E6%95%B8%E4%BD%8D%E9%97%9C%E9%8D%B5%E5%AD%97ep231-%E4%B8%8D%E5%8F%AA%E6%98%AF%E8%81%8A%E5%A4%A9%E6%A9%9F%E5%99%A8%E4%BA%BA-openclaw-%E8%AE%93-ai-%E9%95%B7%E5%87%BA%E6%89%8B%E8%85%B3-%E6%94%B9%E8%AE%8A%E4%BC%81%E6%A5%AD%E8%87%AA%E5%8B%95%E5%8C%96%E7%9A%84%E6%96%B9%E5%BC%8F-ft/id1555393924?i=1000755183676&amp;l=zh-Hant-TW" target="_blank" rel="noopener">Apple Podcasts ↗</a>
+            <a href="https://www.youtube.com/watch?v=yYfUlyxaopU" target="_blank" rel="noopener">YouTube ↗</a>
+            <a href="https://www.bnext.com.tw/podcast/1761/fs-cmmot4hc2022801y9738j76uo" target="_blank" rel="noopener">Business Next ↗</a>
+          </div>
+        </div>
+        <div class="press-date">2025</div>
+      </li>
+
+      <li class="press-row">
+        <div class="press-meta">
+          <span class="press-num">§ 02</span>
+          <span class="press-kind" data-en="Conference" data-zh="年會"></span>
+        </div>
+        <div class="press-body">
+          <h3 class="press-title"
+              data-en="GAI Annual Conference 2025 — invited speaker"
+              data-zh="GAI 年會 2025 — 受邀講者"></h3>
+          <p class="press-desc"
+             data-en="Taiwan's generative-AI industry summit; speaking on AI × manufacturing and the shape of personalized retail."
+             data-zh="台灣生成式 AI 產業年會；分享 AI 與製造整合、個人化零售的未來樣貌。"></p>
+          <div class="press-links">
+            <a href="https://gaiconf.com/agenda#Caesar" target="_blank" rel="noopener">Agenda ↗</a>
+          </div>
+        </div>
+        <div class="press-date">2025</div>
+      </li>
+
+      <li class="press-row">
+        <div class="press-meta">
+          <span class="press-num">§ 03</span>
+          <span class="press-kind" data-en="Conference" data-zh="年會"></span>
+        </div>
+        <div class="press-body">
+          <h3 class="press-title"
+              data-en="Hello World Dev Conference 2025 — invited speaker"
+              data-zh="Hello World Dev Conference 2025 — 受邀講者"></h3>
+          <p class="press-desc"
+             data-en="iThome's developer conference in Taipei; track on AI, agents and real-world product deployment."
+             data-zh="iThome 主辦的開發者年會；分享 AI、agent 與產品落地實戰。"></p>
+          <div class="press-links">
+            <a href="https://hwdc.ithome.com.tw/2025/speaker-page/330" target="_blank" rel="noopener">Speaker Page ↗</a>
+          </div>
+        </div>
+        <div class="press-date">2025</div>
+      </li>
+
+      <li class="press-row">
+        <div class="press-meta">
+          <span class="press-num">§ 04</span>
+          <span class="press-kind" data-en="Talk" data-zh="演講"></span>
+        </div>
+        <div class="press-body">
+          <h3 class="press-title"
+              data-en="&ldquo;From Error to Precision &mdash; where AI Agents meet 3D Manufacturing&rdquo;"
+              data-zh="「從錯誤到準確的距離：AI Agent 如何與 3D 製造交集」"></h3>
+          <p class="press-desc"
+             data-en="Google Developer Group — a talk on bridging LLM-driven agents with real factory output."
+             data-zh="Google Developer Group 社群演講 — 談 LLM agent 如何接上工廠現場的製造輸出。"></p>
+          <div class="press-links">
+            <a href="https://speakerdeck.com/clonn/cong-cuo-wu-dao-zhun-que-de-ju-li-ai-agent-ru-he-yu-3d-zhi-zao-jiao-ji" target="_blank" rel="noopener">Slides (Speaker Deck) ↗</a>
+          </div>
+        </div>
+        <div class="press-date">2025</div>
+      </li>
+
+      <li class="press-row">
+        <div class="press-meta">
+          <span class="press-num">§ 05</span>
+          <span class="press-kind" data-en="Talk" data-zh="演講"></span>
+        </div>
+        <div class="press-body">
+          <h3 class="press-title"
+              data-en="&ldquo;From brand rebuild to supply-chain integration &mdash; Cympack's AI evolution&rdquo;"
+              data-zh="「從品牌重造到供應鏈整合的 AI 演化：Cympack 的實戰經驗」"></h3>
+          <p class="press-desc"
+             data-en="iThome IT+ feature talk — an operator's account of threading AI through brand, supply chain, and fulfillment."
+             data-zh="iThome IT+ 專題演講 — 以實戰角度，談 AI 如何串起品牌、供應鏈與履約流程。"></p>
+          <div class="press-links">
+            <a href="https://itplus.ithome.com.tw/vod-page/1345" target="_blank" rel="noopener">Watch (IT+) ↗</a>
+          </div>
+        </div>
+        <div class="press-date">2025</div>
+      </li>
+
+      <li class="press-row">
+        <div class="press-meta">
+          <span class="press-num">§ 06</span>
+          <span class="press-kind" data-en="Recognition" data-zh="社群身分"></span>
+        </div>
+        <div class="press-body">
+          <h3 class="press-title"
+              data-en="LINE API Expert &mdash; Taiwan"
+              data-zh="LINE API Expert — 台灣名單"></h3>
+          <p class="press-desc"
+             data-en="Designated by LINE Developers as a community expert, for ongoing contribution to the LINE API ecosystem."
+             data-zh="由 LINE Developers 授予的 API Expert 社群身分，持續參與並貢獻於 LINE API 生態。"></p>
+          <div class="press-links">
+            <a href="https://developers.line.biz/en/community/api-experts/tw-caesar-chi/" target="_blank" rel="noopener">Profile ↗</a>
+          </div>
+        </div>
+        <div class="press-date" data-en="Ongoing" data-zh="持續中" style="font-size:16px;letter-spacing:0;padding-top:8px"></div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- DECKS / SLIDES -->
+  <section class="editorial press-section" id="slides" style="padding-top:60px">
+    <div class="section-head reveal">
+      <span class="section-num">
+        <b>§ V</b> &nbsp;·&nbsp; <span data-en="Decks" data-zh="簡報"></span>
+      </span>
+      <h2 class="section-title">
+        <span data-en-html="Slides shared, <span class='italic'>in public.</span>"
+              data-zh-html="公開分享的簡報，<span class='italic'>留在此處。</span>"></span>
+      </h2>
+    </div>
+
+    <ol class="press-list reveal-stagger">
+      <li class="press-row">
+        <div class="press-meta">
+          <span class="press-num">§ 01</span>
+          <span class="press-kind">Speaker Deck</span>
+        </div>
+        <div class="press-body">
+          <h3 class="press-title"
+              data-en="&ldquo;When development meets packaging — how AI turns an idea into a product&rdquo;"
+              data-zh="「當開發遇上包裝：AI 如何讓產品從想法變成商品」"></h3>
+          <p class="press-desc"
+             data-en="On weaving AI through the brand → factory → shelf pipeline. 3.7k views."
+             data-zh="談 AI 如何串起品牌、工廠、貨架的整段路徑。觀看 3.7k 次。"></p>
+          <div class="press-links">
+            <a href="https://speakerdeck.com/clonn/dang-kai-fa-yu-shang-bao-zhuang-ai-ru-he-rang-chan-pin-cong-xiang-fa-bian-cheng-shang-pin" target="_blank" rel="noopener">Open deck ↗</a>
+          </div>
+        </div>
+        <div class="press-date">2025</div>
+      </li>
+
+      <li class="press-row">
+        <div class="press-meta">
+          <span class="press-num">§ 02</span>
+          <span class="press-kind">SlideShare</span>
+        </div>
+        <div class="press-body">
+          <h3 class="press-title"
+              data-en="&ldquo;Remote Team Management&rdquo; — 77 slides"
+              data-zh="「Remote Team Management」 — 77 頁"></h3>
+          <p class="press-desc"
+             data-en="A long-form deck on running distributed engineering teams; one of the most-viewed in the archive. 2.9k views."
+             data-zh="談分散式工程團隊管理的長篇簡報；檔案中觀看數最高之一。觀看 2.9k 次。"></p>
+          <div class="press-links">
+            <a href="https://www.slideshare.net/slideshow/remote-team-management-2016/65352706" target="_blank" rel="noopener">Open deck ↗</a>
+          </div>
+        </div>
+        <div class="press-date">2016</div>
+      </li>
+
+      <li class="press-row">
+        <div class="press-meta">
+          <span class="press-num">§ 03</span>
+          <span class="press-kind">Speaker Deck</span>
+        </div>
+        <div class="press-body">
+          <h3 class="press-title"
+              data-en="&ldquo;Why the old technologists think and act this way&rdquo;"
+              data-zh="「為何技術老人這樣想那樣做？」"></h3>
+          <p class="press-desc"
+             data-en="A 121-slide essay on engineering wisdom that ages well. 2.6k views."
+             data-zh="121 頁的工程心法長文；談經得起時間的判斷力。觀看 2.6k 次。"></p>
+          <div class="press-links">
+            <a href="https://speakerdeck.com/clonn/wei-he-ji-shu-lao-ren-zhe-yang-xiang-na-yang-zuo" target="_blank" rel="noopener">Open deck ↗</a>
+            <a href="https://www.slideshare.net/slideshow/ss-259821328/259821328" target="_blank" rel="noopener">SlideShare mirror ↗</a>
+          </div>
+        </div>
+        <div class="press-date">2023</div>
+      </li>
+
+      <li class="press-row">
+        <div class="press-meta">
+          <span class="press-num">§ 04</span>
+          <span class="press-kind">SlideShare</span>
+        </div>
+        <div class="press-body">
+          <h3 class="press-title"
+              data-en="&ldquo;Codecept.js — an introduction to the front-end E2E testing tool&rdquo;"
+              data-zh="「Codecept.js Introduction — 前端 E2E 測試工具」"></h3>
+          <p class="press-desc"
+             data-en="A 67-slide hands-on guide to a then-emerging end-to-end testing framework. 2.3k views."
+             data-zh="67 頁的實作導覽；介紹當時新興的端對端測試框架。觀看 2.3k 次。"></p>
+          <div class="press-links">
+            <a href="https://www.slideshare.net/slideshow/codeceptjs-introduce-front-end-test-e2e-tool-introduce/66373810" target="_blank" rel="noopener">Open deck ↗</a>
+          </div>
+        </div>
+        <div class="press-date">2017</div>
+      </li>
+
+      <li class="press-row">
+        <div class="press-meta">
+          <span class="press-num">§ 05</span>
+          <span class="press-kind">SlideShare</span>
+        </div>
+        <div class="press-body">
+          <h3 class="press-title"
+              data-en="&ldquo;LINE@ 2.0 — offline to online&rdquo;"
+              data-zh="「LINE@ 2.0 offline to online」"></h3>
+          <p class="press-desc"
+             data-en="On taking LINE Official Account from a static channel into a live commerce surface. 2.1k views."
+             data-zh="談 LINE 官方帳號如何從單向通路，走向可被經營的商務介面。觀看 2.1k 次。"></p>
+          <div class="press-links">
+            <a href="https://www.slideshare.net/slideshow/line-20-offline-to-online/153048466" target="_blank" rel="noopener">Open deck ↗</a>
+          </div>
+        </div>
+        <div class="press-date">2019</div>
+      </li>
+
+      <li class="press-row">
+        <div class="press-meta">
+          <span class="press-num">§ 06</span>
+          <span class="press-kind">Speaker Deck</span>
+        </div>
+        <div class="press-body">
+          <h3 class="press-title"
+              data-en="&ldquo;As an engineer, let's build the CRM system via LINE Official Account 2.0&rdquo;"
+              data-zh="「As an Engineers — 用 LINE Official Account 2.0 打造 CRM 系統」"></h3>
+          <p class="press-desc"
+             data-en="An engineer's recipe for stitching LINE OA into a working CRM. 840 views."
+             data-zh="從工程師視角，把 LINE 官方帳號接成一套能運作的 CRM。觀看 840 次。"></p>
+          <div class="press-links">
+            <a href="https://speakerdeck.com/clonn/as-an-engineers-lets-build-the-crm-system-via-line-official-account-2-dot-0" target="_blank" rel="noopener">Open deck ↗</a>
+          </div>
+        </div>
+        <div class="press-date">2022</div>
+      </li>
+    </ol>
+
+    <div class="archive-links reveal">
+      <a href="https://speakerdeck.com/clonn" target="_blank" rel="noopener" data-en="Full archive on Speaker Deck →" data-zh="Speaker Deck 全部簡報 →"></a>
+      <a href="https://www.slideshare.net/clonncd" target="_blank" rel="noopener" data-en="49 decks on SlideShare →" data-zh="SlideShare 共 49 篇 →"></a>
+    </div>
+  </section>
+
+  <!-- MODULES / NPM -->
+  <section class="editorial" id="modules" style="padding-top:60px">
+    <div class="section-head reveal">
+      <span class="section-num">
+        <b>§ VI</b> &nbsp;·&nbsp; <span data-en="Modules" data-zh="模組"></span>
+      </span>
+      <h2 class="section-title">
+        <span data-en-html="Twenty packages, <span class='italic'>one workhorse.</span>"
+              data-zh-html="二十支模組，<span class='italic'>一支主力。</span>"></span>
+      </h2>
+    </div>
+
+    <div class="module-hero reveal">
+      <div class="module-headline">
+        <div class="kicker">npm install · slack-node</div>
+        <a class="module-name" href="https://www.npmjs.com/package/slack-node" target="_blank" rel="noopener">slack-node</a>
+        <p class="module-tag"
+           data-en="A small Slack API library for Node, first published in 2014. A decade later it still pulls hundreds of thousands of installs a month — quietly powering other people's tools."
+           data-zh="一支 2014 年發佈的 Slack Node 函式庫；十年過後，它依舊每月被下載數十萬次，靜靜地撐著別人手上的工具。"></p>
+      </div>
+      <div class="module-stats">
+        <div class="stat">
+          <div class="num">331k<span class="unit">/mo</span></div>
+          <div class="label" data-en="Monthly downloads" data-zh="每月下載"></div>
+        </div>
+        <div class="stat">
+          <div class="num">245</div>
+          <div class="label" data-en="Dependent packages" data-zh="被依賴的套件"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-grid reveal-stagger">
+      <div class="cell">
+        <div class="pkg-meta">
+          <span class="since">2026</span>
+          <span data-en="AI tooling" data-zh="AI 工具"></span>
+        </div>
+        <a class="pkg-name" href="https://www.npmjs.com/package/proxy-acpx-x" target="_blank" rel="noopener">proxy-acpx-x</a>
+        <p class="pkg-desc"
+           data-en="ACP adapters that put Claude Code, Codex and Gemini CLI on a common stream-json wire."
+           data-zh="把 Claude Code、Codex、Gemini CLI 接到同一個 ACP / stream-json 介面上的轉接層。"></p>
+      </div>
+      <div class="cell">
+        <div class="pkg-meta">
+          <span class="since">2026</span>
+          <span data-en="Obsidian plugin" data-zh="Obsidian 外掛"></span>
+        </div>
+        <a class="pkg-name" href="https://www.npmjs.com/package/obsidian-llm-wiki" target="_blank" rel="noopener">obsidian-llm-wiki</a>
+        <p class="pkg-desc"
+           data-en="A Karpathy-style LLM knowledge base for Obsidian — ingest, compile, query and lint your vault with Claude."
+           data-zh="Karpathy 風格的 LLM 知識庫外掛；用 Claude 把 Obsidian vault 攝取、編譯、查詢、檢查。"></p>
+      </div>
+      <div class="cell">
+        <div class="pkg-meta">
+          <span class="since">2017</span>
+          <span data-en="CLI" data-zh="CLI"></span>
+        </div>
+        <a class="pkg-name" href="https://www.npmjs.com/package/gongxi" target="_blank" rel="noopener">gongxi</a>
+        <p class="pkg-desc"
+           data-en="A small festive CLI — the &lsquo;congratulations&rsquo; series, written for fun and shipped anyway."
+           data-zh="一支小小的「恭喜系列」CLI；隨手寫的玩具，仍順手發到 npm。"></p>
+      </div>
+      <div class="cell">
+        <div class="pkg-meta">
+          <span class="since">2014</span>
+          <span data-en="Dev tool" data-zh="開發工具"></span>
+        </div>
+        <a class="pkg-name" href="https://www.npmjs.com/package/simple-livereload" target="_blank" rel="noopener">simple-livereload</a>
+        <p class="pkg-desc"
+           data-en="A no-frills LiveReload server over WebSocket, paired with the Chrome extension."
+           data-zh="基於 WebSocket 的極簡 LiveReload server，搭配 Chrome 外掛使用。"></p>
+      </div>
+      <div class="cell">
+        <div class="pkg-meta">
+          <span class="since">2016</span>
+          <span data-en="Shell helper" data-zh="Shell 小工具"></span>
+        </div>
+        <a class="pkg-name" href="https://www.npmjs.com/package/npy" target="_blank" rel="noopener">npy</a>
+        <p class="pkg-desc"
+           data-en="An npm-to-yarn command alias — the kind of three-line module that nonetheless lives on every laptop."
+           data-zh="一支 npm → yarn 的指令別名；那種三行寫完，卻每台筆電都裝著的小模組。"></p>
+      </div>
+      <div class="cell">
+        <div class="pkg-meta">
+          <span class="since">2012</span>
+          <span data-en="Node-era classic" data-zh="早期 Node"></span>
+        </div>
+        <a class="pkg-name" href="https://www.npmjs.com/package/rest-client" target="_blank" rel="noopener">rest-client</a>
+        <p class="pkg-desc"
+           data-en="One of the early Node.js clients for talking to RESTful services — a relic from when the ecosystem was still being mapped."
+           data-zh="早期的 Node.js RESTful client；那是一個生態還在被測繪的年代留下的遺跡。"></p>
+      </div>
+    </div>
+
+    <div class="archive-links reveal">
+      <a href="https://www.npmjs.com/~clonn" target="_blank" rel="noopener" data-en="All 20 modules on npm →" data-zh="npm 上 20 支模組 →"></a>
+      <a href="https://github.com/clonn" target="_blank" rel="noopener" data-en="Source on GitHub →" data-zh="原始碼在 GitHub →"></a>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="contact-grid reveal">
       <div>
         <span class="section-num" style="display:block;margin-bottom:28px">
-          <b>§ IV</b> &nbsp;·&nbsp; <span data-en="Correspondence" data-zh="聯絡"></span>
+          <b>§ VII</b> &nbsp;·&nbsp; <span data-en="Correspondence" data-zh="聯絡"></span>
         </span>
         <h2>
           <span data-en-html="Write, or <span class='italic'>read along.</span>"
@@ -1355,6 +2010,21 @@
         <a class="link-row" href="http://github.com/clonn/" target="_blank" rel="noopener">
           <span class="link-label">GitHub</span>
           <span class="handle">@clonn</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="link-row" href="https://speakerdeck.com/clonn" target="_blank" rel="noopener">
+          <span class="link-label">Speaker Deck</span>
+          <span class="handle">@clonn</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="link-row" href="https://www.slideshare.net/clonncd" target="_blank" rel="noopener">
+          <span class="link-label">SlideShare</span>
+          <span class="handle">/clonncd</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="link-row" href="https://www.npmjs.com/~clonn" target="_blank" rel="noopener">
+          <span class="link-label">npm</span>
+          <span class="handle">~clonn</span>
           <span class="arrow">→</span>
         </a>
         <a class="link-row" href="https://www.facebook.com/clonncd" target="_blank" rel="noopener">
